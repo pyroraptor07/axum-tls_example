@@ -1,0 +1,19 @@
+[package]
+name = "axum-tls-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.5", features = ["macros"] }
+color-eyre = "0.6"
+dotenvy = "0.15"
+futures = "0.3"
+hyper = { version = "0.14", features = ["server", "stream"] }
+rustls-pemfile = "1.0"
+tls-listener = { version = "0.5", features = ["rustls", "hyper", "hyper-h1", "hyper-h2"] }
+tokio = { version = "1.21", features = ["full"] }
+tokio-rustls = "0.23"
+
+# For color-eyre
+[profile.dev.package.backtrace]
+opt-level = 3
